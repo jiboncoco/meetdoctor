@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Meet Doctor App",
   "scripts": {
-    "watch:css": "npx tailwindcss -i ./src/tailwind.css -o ./dist/main.css --watch"
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "keywords": [],
   "author": "",
