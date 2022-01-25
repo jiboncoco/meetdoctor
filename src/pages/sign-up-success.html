@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="../../dist/main.css" />
   </head>
   <body>
     <!-- Header -->
@@ -21,31 +21,29 @@
       <div class="max-w-7xl mx-auto px-4 lg:px-14 pt-6 lg:py-10">
         <div class="flex justify-between h-16">
           <div class="flex flex-auto justify-between">
-
             <!-- Logo Brand -->
-            <a href="index.html" class="flex-shrink-0 flex items-center">
+            <a href="../../index.html" class="flex-shrink-0 flex items-center">
               <img
                 class="h-12 lg:h-16 w-auto"
-                src="/assets/images/logo.png"
+                src="/src/assets/images/logo.png"
                 alt="Meet Doctor Logo"
               />
             </a>
 
             <!-- Navigation Menu -->
             <div class="hidden lg:ml-6 lg:flex lg:space-x-12">
-              
               <!-- Active Link: 
-                  "after:absolute after:content-[''] after:border-b-2 
+                  "text-[#1E2B4F] after:absolute after:content-[''] after:border-b-2 
                   after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 
-                  after:bottom-3 after:left-1/2", 
+                  after:bottom-3 after:left-1/2 font-semibold", 
                   
                   Default Link: 
-                  "text-[#1E2B4F] relative hover:text-gray-500 inline-flex 
+                  "text-[#1E2B4F] hover:text-gray-500 inline-flex 
                   items-center px-1 pt-1 text-lg font-medium"
              -->
               <a
                 href="#"
-                class="text-[#1E2B4F] relative after:absolute after:content-[''] after:border-b-2 after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 after:bottom-3 after:left-1/2 inline-flex items-center px-1 text-lg font-semibold"
+                class="text-[#1E2B4F] relative after:absolute after:content-[''] after:border-b-2 after:border-[#0D63F5] after:w-8/12 after:-translate-x-1/2 after:bottom-3 after:left-1/2 font-semibold inline-flex items-center px-1 text-lg"
               >
                 Home
               </a>
@@ -68,32 +66,34 @@
                 Pricing
               </a>
             </div>
-
           </div>
 
-          <!-- Button -->
-          <div class="hidden lg:ml-10 lg:flex lg:items-center">
-            <a
-              href="/pages/sign-in.html"
-              class="inline-flex items-center rounded-full text-[#1E2B4F] text-lg font-medium bg-[#F2F6FE] px-10 py-3"
-            >
-              Sign In
-            </a>
-            <!-- <div x-data="{ profileDekstopOpen: false }" class="ml-3 relative">
+          <!-- Button (Authenticated) -->
+          <div
+            class="hidden lg:ml-10 lg:flex lg:items-center border-l pl-4 pt-2"
+          >
+            <div x-data="{ profileDekstopOpen: false }" class="ml-3 relative">
               <div>
                 <button
                   type="button"
-                  class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  class="bg-white rounded-full flex text-sm focus:outline-none"
                   id="user-menu-button"
                   aria-expanded="false"
                   aria-haspopup="true"
                   @click="profileDekstopOpen = ! profileDekstopOpen"
                 >
+                  <!-- focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 -->
                   <span class="sr-only">Open user menu</span>
+                  <div class="text-right mr-5">
+                    <div class="text-base font-medium text-[#1E2B4F]">
+                      Hi, Shayna
+                    </div>
+                    <div class="text-sm text-[#AFAEC3]">Pasien</div>
+                  </div>
                   <img
-                    class="h-8 w-8 rounded-full"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
+                    class="h-12 w-12 rounded-full ring-1 ring-offset-4 ring-[#0D63F3]"
+                    src="/src/assets/images/authenticated-user.svg"
+                    alt="User Profile"
                   />
                 </button>
               </div>
@@ -106,7 +106,7 @@
                 x-transition:leave="transition ease-in duration-75"
                 x-transition:leave-start="opacity-100 scale-100"
                 x-transition:leave-end="opacity-0 scale-95"
-                class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                class="origin-top-right absolute z-30 right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="user-menu-button"
@@ -114,7 +114,7 @@
               >
                 <a
                   href="#"
-                  class="block px-4 py-2 text-sm text-gray-700"
+                  class="block px-4 py-2 text-sm text-[#1E2B4F] hover:bg-gray-100"
                   role="menuitem"
                   tabindex="-1"
                   id="user-menu-item-0"
@@ -122,22 +122,22 @@
                 >
                 <a
                   href="#"
-                  class="block px-4 py-2 text-sm text-gray-700"
+                  class="block px-4 py-2 text-sm text-[#1E2B4F] hover:bg-gray-100"
                   role="menuitem"
                   tabindex="-1"
                   id="user-menu-item-1"
                   >Settings</a
                 >
                 <a
-                  href="#"
-                  class="block px-4 py-2 text-sm text-gray-700"
+                  href="../../index.html"
+                  class="block px-4 py-2 text-sm text-[#1E2B4F] hover:bg-gray-100"
                   role="menuitem"
                   tabindex="-1"
                   id="user-menu-item-2"
                   >Sign out</a
                 >
               </div>
-            </div> -->
+            </div>
           </div>
 
           <!-- Mobile Toggle button -->
@@ -150,7 +150,7 @@
               @click="navbarMobileOpen = ! navbarMobileOpen"
             >
               <span class="sr-only">Open main menu</span>
-              
+
               <!--
                 Icon when menu is closed.
                 Menu open: "hidden", Menu closed: "block"
@@ -194,14 +194,12 @@
               </svg>
             </button>
           </div>
-
         </div>
       </div>
 
       <!-- Mobile menu, show/hide based on menu state. -->
       <div class="lg:hidden" id="mobile-menu" x-show="navbarMobileOpen">
         <div class="pt-2 pb-3 space-y-1">
-
           <!-- 
             Active Link: "bg-indigo-50 border-[#0D63F5] text-[#1E2B4F]", 
             
@@ -230,7 +228,7 @@
           >
         </div>
 
-        <!-- Profile (Mobile) -->
+        <!-- Profile (Mobile Authenticated) -->
         <div
           x-data="{ profileMobilenOpen: false }"
           class="pt-4 pb-3 border-t border-gray-200"
@@ -241,16 +239,14 @@
           >
             <div class="flex-shrink-0">
               <img
-                class="h-10 w-10 rounded-full"
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                class="h-10 w-10 rounded-full ring-1 ring-offset-4 ring-[#0D63F3]"
+                src="/src/assets/images/authenticated-user.svg"
                 alt=""
               />
             </div>
             <div class="ml-3">
-              <div class="text-base font-medium text-[#1E2B4F]">Tom Cook</div>
-              <div class="text-sm font-medium text-gray-500">
-                tom@example.com
-              </div>
+              <div class="text-base font-medium text-[#1E2B4F]">Hi, Shayna</div>
+              <div class="text-sm text-[#AFAEC3]">Pasien</div>
             </div>
           </div>
           <div x-show="profileMobilenOpen" class="mt-3 space-y-1">
@@ -265,13 +261,12 @@
               >Settings</a
             >
             <a
-              href="#"
+              href="../../index.html"
               class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-[#1E2B4F] hover:bg-gray-100"
               >Sign out</a
             >
           </div>
         </div>
-
       </div>
     </nav>
     <!-- End Header -->
@@ -279,15 +274,24 @@
     <!-- Content -->
     <div class="min-h-screen flex justify-center items-center pt-20 py-28">
       <div class="mx-auto text-center">
-        <img src="/assets/images/sign-up-success-ilustration.svg" class="inline-block" alt="Sign up success ilustration">
+        <img
+          src="/src/assets/images/sign-up-success-ilustration.svg"
+          class="inline-block"
+          alt="Sign up success ilustration"
+        />
         <div class="mt-12">
-          <h2 class="text-[#1E2B4F] text-2xl font-semibold">Registrasi Berhasil</h2>
-          <p class="text-[#7e7ca0] mt-4">
-            Selamat menikmati kemudahan 
-            <br>
+          <h2 class="text-[#1E2B4F] text-2xl font-semibold">
+            Registrasi Berhasil
+          </h2>
+          <p class="text-[#AFAEC3] mt-4">
+            Selamat menikmati kemudahan
+            <br />
             dalam berkonsultasi
           </p>
-          <a href="../index.html" class="inline-block mt-10 bg-[#0D63F3] text-white rounded-full px-14 py-3">
+          <a
+            href="authenticated.html"
+            class="inline-block mt-10 bg-[#0D63F3] text-white rounded-full px-14 py-3"
+          >
             Home
           </a>
         </div>
