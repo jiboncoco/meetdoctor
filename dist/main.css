@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.0.16 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.17 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -1379,6 +1379,10 @@ body {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-\[11px\] {
+  font-size: 11px;
 }
 
 .font-semibold {
